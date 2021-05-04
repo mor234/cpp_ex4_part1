@@ -47,17 +47,10 @@ TEST_CASE("good tests")
 {
     srand(SEED);
     Board b;
+    CHECK(b.is_clean());
     initializeBoard(b);
-    for(int i = 0;i<30; i++)
-    { 
-        int rand_unit_index_d = rand() % 3;
+    CHECK_FALSE(b.is_clean());
 
-
-        //== check
-        CHECK(true);
-
-
-    }
     Researcher r{b, rand_city()};
     Scientist s{b, rand_city(), 5};
     FieldDoctor f{b, rand_city()};
